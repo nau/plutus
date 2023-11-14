@@ -642,6 +642,24 @@ executable pir
     , text
     , transformers
 
+executable new
+  import:         lang
+  main-is:        src/PlutusCore/Executable/New/GetOpt.hs
+  hs-source-dirs: executables
+  build-depends:
+    , base                                  >=4.9   && <5
+    , bytestring
+    , cassava
+    , containers
+    , lens
+    , megaparsec
+    , optparse-applicative
+    , plutus-core-execlib                   ^>=1.16
+    , plutus-core:{plutus-core, plutus-ir}  ^>=1.16
+    , text
+    , transformers
+
+
 ----------------------------------------------
 -- support libs
 ----------------------------------------------
@@ -655,6 +673,7 @@ library plutus-core-execlib
     PlutusCore.Executable.Common
     PlutusCore.Executable.Parsers
     PlutusCore.Executable.Types
+    PlutusCore.Executable.New.Types
 
   build-depends:
     , aeson
